@@ -45,13 +45,11 @@ const submitLogin = (event) => {
     user.name = loginInput.value
     user.color = randomColor()
 
-    login.style.display = "none"
+    login.style.display = "none"    
     chat.style.display = "flex"
 
     ws = new WebSocket("wss://chat-online-i3e7.onrender.com")
     ws.onmessage = processMensage
-
-    console.log(user)
 };
 
 const processMensage = ({ data }) => {
